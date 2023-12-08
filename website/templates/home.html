@@ -1,0 +1,131 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+		body {
+  			font-family: Garamond, serif;
+		}
+
+		.background-image {
+			background-image: url('/static/cloud.png');
+			height: 725px;
+		}
+		
+		h1 {
+		color: D6EEEE;
+		text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+		}
+
+		table, th, td {
+		font-size: 20px;
+  		/* border:1px solid white
+		*/}
+
+		table {
+  		border-collapse: collapse;
+  		width: 100%;
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+		}
+
+		th, td {
+  		text-align: left;
+  		padding: 20px;
+		
+		border-radius: 30px;
+		}
+
+		.button {
+  		display: inline-block;
+  		border-radius: 40px;
+  		background-color: #D6EEEE;
+  		border: none;
+  		color: black;
+  		text-align: center;
+  		font-size: 26px;
+		font-family : Times New Roman;
+  		padding: 15px;
+  		width: 205px;
+  		transition: all 0.5s;
+  		cursor: pointer;
+  		margin: 20px;
+  		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+		}
+
+		.button span {
+  		cursor: pointer;
+  		display: inline-block;
+  		position: relative;
+  		transition: 0.5s;
+		}
+
+		.button span:after {
+  		content: '\00bb';
+  		position: absolute;
+  		opacity: 0;
+  		top: 0;
+  		right: -50px;
+  		transition: 0.9s;
+		}
+
+
+		.button:hover span {
+  		padding-right: 15px;
+		}
+
+		.button:hover span:after {
+  		opacity: 3;
+  		right: 0;
+		}
+
+	</style>
+
+</head>
+
+<body >
+<form method="POST", action="{{url_for('views.home')}}">
+
+<div class="background-image">
+
+        <center>
+
+        <br>
+	
+        <h1>Customer Churn Predictor</h1><br>
+        
+        	<table style="width:45%" >
+
+  			<tr >
+    				<td><b><center>Call  Failure :<input type="text", name='a', placeholder="", style="font-size:15pt;height:25px;width:150px;"></b></td>
+    				<td><b><center>Complains :  <input type="text", name='b', placeholder="", style="font-size:15pt;height:25px;width:150px;"></b></td>
+    				<td><b><center>Subscription Length :  <input type="text", name='c', placeholder="", style="font-size:15pt;height:25px;width:150px;"></b></td>
+  			</tr>
+			<tr>
+    				<td><b><center>Charge Amount : <input type="text", name='d', placeholder="", style="font-size:15pt;height:25px;width:150px;"></b></td>
+    				<td><b><center>Seconds of Use :  <input type="text", name='e', placeholder="", style="font-size:15pt;height:25px;width:150px;"></b></td>
+    				<td><b><center>Frequency of SMS :  <input type="text", name='f', placeholder="", style="font-size:15pt;height:25px;width:150px;"></b></td>
+  			</tr>
+			<tr>
+    				<td><b><center>Distinct Called Numbers :  <input type="text", name='g', placeholder="", style="font-size:15pt;height:25px;width:150px;"></b></td>
+    				<td><b><center>Age Group :  <input type="text", name='h', placeholder="", style="font-size:15pt;height:25px;width:150px;"></b></td>
+    				<td><b><center>Tariff Plan :  <input type="text", name='i', placeholder="", style="font-size:15pt;height:25px;width:150px;"></b></td>
+  			</tr>
+			<tr>
+    				<td><b><center>Status :  <input type="text", name='j', placeholder="", style="font-size:15pt;height:25px;width:150px;"></b></td>
+    				<td><b><center>Log_Freq :  <input type="text", name='k', placeholder="", style="font-size:15pt;height:25px;width:150px;"></b></td>
+    				<td><b><center>Log_use :  <input type="text", name='l', placeholder="", style="font-size:15pt;height:25px;width:150px;"></b></td>
+  			</tr>
+			</table><br>
+
+            		<button <input type="submit" class="button" style="vertical-align:middle" ><span>Predict</span></button>
+		
+    	</center>
+
+</div>
+</form>
+</body>
+
+</html>
+{% endblock %}

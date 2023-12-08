@@ -1,0 +1,71 @@
+<html>
+
+	<head>
+		<style>
+
+		.background-image {
+			background-image: url('/static/cloud.png');
+			height: 725px;
+		}
+		
+		h1 {
+		color: D6EEEE;
+		text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+		}
+		
+		.fcc-btn {
+  			background-color: #99d6ff;
+			border-radius: 40px;
+  			color: Black;
+			font-size: 20px;
+  			padding: 20px 30px;
+  			text-decoration: none;
+			}
+		.fcc-btn:hover {
+  			background-color: #4db8ff;
+			}
+
+		</style>
+	</head>
+		<body>
+			<div class="background-image">
+
+    			<center>
+
+				<br>
+        			<h1>  PREDICTION :  </h1>
+    
+    				{%if data < 0.5%}
+
+					<br>
+    					<h2 style="font-size: 30px"><u>Not Churn</u></h2>  
+					<img src="/static/th.jpeg" ><br>
+					
+
+    				{%else%}
+
+					<br>
+    					<h2 style="font-size: 30px"><u>Churn</u></h2>
+		<pre style="font-family: 'Avenir', Verdana, sans-serif; font-size: 18px" >
+		Churn is a simple metric that refers to customer turnover. To put it simply, churn happens when a customer decides to stop using a company’s
+		product or service. The more customer churning that takes place, the more customers are leaving your business for a competitor.
+		</pre>
+    					<img src="/static/un.jpeg" >
+					<br>
+					
+    				{%endif%}
+
+        				<br><br>
+	
+				<a class="fcc-btn" href='/'>Back to home page</a> 
+
+    			</center>
+    			</div>
+		</body>
+</html>
+
+
+
+
+
+
